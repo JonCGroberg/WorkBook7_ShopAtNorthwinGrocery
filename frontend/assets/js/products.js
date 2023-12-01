@@ -62,7 +62,7 @@ function populateProducts(chosenCategory) {
   function populate(choosenProducts) {
     choosenProducts.forEach((product) => {
       const productCard = document.createElement("div");
-      productCard.classList.add("col-4", "col-md-3", "col-lg-3", "col-xl-2");
+      productCard.classList.add("col-12", "col-sm-6", "col-md-4", "col-lg-4", "col-xl-3");
       productCard.innerHTML = generateCard(product);
       document.querySelector("#products").appendChild(productCard);
     });
@@ -71,7 +71,7 @@ function populateProducts(chosenCategory) {
 
 const generateCard = (product) =>
   `
-            <div class="card h-100">
+            <div class="card h-100 shadow-sm">
                 <h5 class="card-header">${product.productName}</h5>
                 <div class="card-body">
                     <div class="">$${Number(product.unitPrice).toFixed(2)}</div>
