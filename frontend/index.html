@@ -6,23 +6,23 @@
     <title>Document</title>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/styles.css">
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS & Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   </head>
-  <body class="bg-dark" data-bs-theme="dark">
+  <body>
     <nav
       class="navbar bg-body navbar-expand-lg shadow-sm border"
-      data-bs-theme="light"
     >
-      <div class="container">
+      <div class="container" >
         <a class="navbar-brand" href="#">Northwind Grocery</a>
         <button
-          class="navbar-toggler"
+          class="navbar-toggler shadow border-light-subtle"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent"
@@ -30,7 +30,7 @@
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span class="bi-list p-3"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -38,7 +38,7 @@
               <a class="nav-link active" aria-current="page" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Products</a>
+              <a class="nav-link" href="./products.html">Products</a>
             </li>
           </ul>
           <form class="" role="search">
@@ -57,30 +57,27 @@
         </div>
       </div>
     </nav>
-    <main class="container-fluid bg-gradient">
-        <div class="container">
-      <div class="row pt-5 row-gap-4 rounded-2">
-        <div class="col-12 col-sm-7 col-md-6 col-lg-5">
+    <main class="container-fluid pt-5" >
+        <div class="mx-auto h-100 w-75">
+      <div class="row row-gap-4 column-gap-4 rounded-2 h-100">
+        <div class="col-12 col-sm-5 col-md-4 col-lg-4 p-0 my-auto">
           <h1>Northwind Grocery</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            voluptatum, quibusdam, voluptate, quia voluptas quos dolorum
-            voluptatibus quod quas quidem voluptatem? Quisquam, voluptates
-            voluptatibus. Quisquam, voluptates voluptatibus. Quisquam,
-            voluptates voluptatibus
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam.
           </p>
-          <a name="" id="" class="btn btn-danger" href="#" role="button"
+          <a name="" id="" class="btn btn-danger" href="./products.html" role="button"
             >Search Products</a
           >
         </div>
-        <div class="col rounded-4 overflow-hidden d-flex p-0" style="max-height: 400px;">
-            <img src="./assets/images/hero.jpeg" class="object-fit-cover w-100 h-100">
+        <div class="col rounded-4 overflow-hidden p-0 my-auto" style="max-height: 500px;">
+            <img src="./assets/images/hero.jpeg" class="object-fit-cover w-100">
         </div>
       </div>
       <!-- </div> -->
     </main>
     <section class="container-fluid pt-5 bg-white text-black mt-5 pb-5" >
-        <div class="container">
+        <div class="w-75 mx-auto">
+            <h2 class="">Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde quisquam repellat, expedita doloribus amet temporibus, quia deserunt error dolores accusantium soluta ducimus sit minima animi ex totam sunt pariatur consequatur?</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, recusandae dolores quos voluptas culpa rerum! In hic, amet omnis ad nobis velit, explicabo ratione facilis eaque obcaecati dicta, vel illum.</p>
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda, illum perspiciatis voluptates quo placeat expedita iusto enim iure iste maxime sunt voluptatibus culpa sequi quaerat necessitatibus impedit explicabo quas ex.</p>
