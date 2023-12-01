@@ -7,19 +7,84 @@ searchTypesSel.addEventListener("change", (e) => {
   } else {
     categoriesSel.classList.add("d-none");
   }
-});
-categoriesSel.addEventListener("change", (e) => {
-  console.log(e.target.value);
+  if (e.target.value === "all") {
+    populateProducts();
+  }
 });
 
-function loadCategories() {
+categoriesSel.addEventListener("change", (e) => {
+  const chosenCategory = e.target.value;
+  removeProducts();
+  populateProducts(chosenCategory);
+});
+
+function populateCategories() {
   fetch("http://localhost:8081/api/categories")
     .then((response) => response.json())
     .then((data) => {
       data.forEach((category) => {
-        categoriesSel.appendChild(new Option(category.name));
+        categoriesSel.innerHTML += `<option value="${category.categoryId}">${category.name} : ${category.description}</option>`;
       });
     });
 }
 
-loadCategories();
+function removeProducts() {
+  const products = document.querySelector("#products");
+  while (products.firstChild) {
+    products.removeChild(products.firstChild);
+  }
+}
+
+function populateProducts(chosenCategory) {
+  if (chosenCategory) {
+    fetch("http://localhost:8081/api/products")
+      .then((response) => response.json())
+      .then((allProducts) => {
+        let filteredProducts = allProducts.filter(
+          (product) => product.categoryId == chosenCategory
+        );
+        populate(
+          filteredProducts.sort((a, b) =>
+            a.productName.localeCompare(b.productName)
+          )
+        );
+      });
+    populate();
+  } else {
+    fetch("http://localhost:8081/api/products")
+      .then((response) => response.json())
+      .then((allProducts) => {
+        populate(
+          allProducts.sort((a, b) => a.productName.localeCompare(b.productName))
+        );
+      });
+  }
+  function populate(choosenProducts) {
+    choosenProducts.forEach((product) => {
+      const productCard = document.createElement("div");
+      productCard.classList.add("col-4", "col-md-3", "col-lg-3", "col-xl-2");
+      productCard.innerHTML = generateCard(product);
+      document.querySelector("#products").appendChild(productCard);
+    });
+  }
+}
+
+const generateCard = (product) =>
+  `
+            <div class="card h-100">
+                <h5 class="card-header">${product.productName}</h5>
+                <div class="card-body">
+                    <div class="">$${Number(product.unitPrice).toFixed(2)}</div>
+                    <div class="">${product.unitsInStock} units in stock</div>
+                </div>
+                <div class="card-footer p-2">
+                    <div class="input-group ">
+                        <a href="#" class="col-8 btn-sm btn btn-danger"> + add</a>
+                        <a href="#" class="col btn btn-outline-secondary btn-sm">?</a>
+                    </div>
+                </div>
+            </div>
+        `;
+
+populateCategories();
+populateProducts();
