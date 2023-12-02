@@ -71,21 +71,31 @@
       </div>
     </nav>
     <!-- Page Content -->
-    <main class="container pt-5">
-      <h1 class="py-2">Product Finder</h1>
-      <!-- Selects -->
-      <select class="form-select" name="searchTypes" id="searchTypes">
-        <option value="" disabled selected>Select one</option>
-        <option value="categories">Search by category</option>
-        <option value="all">View All</option>
-      </select>
-      <select class="form-select mt-2 d-none" name="categories" id="categories">
-        <option value="" disabled selected>Then choose a category</option>
-      </select>
-      <!-- Product list -->
-      <section class="pt-5 p-0 container-fluid">
-        <div id="products" class="row row-gap-5"></div>
-      </section>
+    <main class="container pt-5 pb-5">
+      <div class="row pt-0 pt-md-4">
+        <div class=" col-sm-12 col-md-4 col-lg-3 pb-5">
+          <h1 class="">Product Finder</h1>
+          <!-- Selects -->
+          <select class="form-select" name="searchTypes" id="searchTypes">
+            <option value="" disabled selected>Select one</option>
+            <option value="categories">View Categories</option>
+            <option value="all">View All</option>
+          </select>
+          <select
+            class="form-select mt-2 d-none text-wrap"
+            name="categories"
+            id="categories"
+            size="25"
+          >
+          </select>
+        </div>
+        <!-- Product list -->
+        <div class="col">
+          <section class=" p-0 container-fluid">
+            <div id="products" class="row row-gap-5"></div>
+          </section>
+        </div>
+      </div>
     </main>
   </body>
 </html>
